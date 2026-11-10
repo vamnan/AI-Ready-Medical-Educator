@@ -89,6 +89,14 @@ a:hover { color: var(--gold); }
 .topbar .wrap { height: 75px; gap: 24px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--text); font-family: var(--serif); font-weight: 400; font-size: 1.3rem; letter-spacing: -.01em; text-decoration: none; white-space: nowrap; }
 .brand:hover { color: var(--text); }
+.brand-acronym { font-family: var(--sans); font-weight: 700; font-size: .8em; letter-spacing: .14em; color: var(--gold-2); }
+.brand span { padding-left: 12px; border-left: 1px solid var(--border-strong); }
+footer .brand-acronym { margin-right: 2px; }
+.topbar nav a, .topbar .nav-cta { white-space: nowrap; }
+.topbar .nav-cta { flex: none; }
+@media (max-width: 1100px) { .topbar nav { gap: 20px !important; } }
+/* While the nav links are showing on a narrow screen, the acronym alone carries the brand */
+@media (min-width: 801px) and (max-width: 1000px) { .brand span { display: none; } }
 .brand-logo { width: 40px; height: 40px; object-fit: contain; flex: none; filter: drop-shadow(0 0 1px rgba(240,236,228,.55)); }
 .topbar nav { flex: 1; justify-content: center; gap: 30px; font-size: .92rem; }
 .topbar nav a { color: var(--muted); text-decoration: none; transition: color .3s var(--ease); }
@@ -229,6 +237,15 @@ table.agenda { background: transparent; border: 0; border-radius: 0; border-top:
 .timeline li:last-child { padding-bottom: 0; }
 .timeline b { color: var(--gold); font-family: var(--sans); font-weight: 500; font-size: .7rem; letter-spacing: .2em; margin-bottom: 4px; }
 
+/* Certification badge under the timeline */
+.credential { display: flex; align-items: center; gap: 22px; margin-top: 34px; padding: 20px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); }
+.credential-badge { width: 120px; height: 120px; flex: none; object-fit: cover; border-radius: 12px; background: #fff; }
+.credential b { display: block; color: var(--gold); font-family: var(--sans); font-weight: 500; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 4px; }
+.credential h4 { margin: 0 0 6px; font-family: var(--serif); font-weight: 400; font-size: 1.45rem; line-height: 1.15; color: var(--text); }
+.credential p { margin: 0 0 8px; color: var(--muted); font-size: .92rem; }
+.credential a { font-size: .9rem; }
+@media (max-width: 480px) { .credential { flex-direction: column; align-items: flex-start; } }
+
 .callout { background: var(--sheen); border: 1px solid var(--border); border-left: 2px solid var(--gold); border-radius: 0 14px 14px 0; color: var(--muted); padding: 18px 22px; }
 .callout b { color: var(--gold-2); }
 .price { font-family: var(--serif); font-weight: 400; font-size: 3.4rem; line-height: 1; color: var(--gold-2); background: var(--grad-gold-text); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin: 6px 0 4px; }
@@ -365,6 +382,6 @@ footer small { display: block; margin-top: 18px; color: var(--faint); font-size:
   .agenda td { display: block; border: 0; padding: 2px 0 !important; width: auto !important; }
   .agenda td.out::before { content: "You produce: "; color: var(--faint); }
 }
-@media (max-width: 360px) {
+@media (max-width: 480px) {
   .brand span { display: none; }
 }
